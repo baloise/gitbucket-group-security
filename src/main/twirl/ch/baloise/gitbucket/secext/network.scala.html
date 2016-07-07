@@ -1,0 +1,10 @@
+@(repository: gitbucket.core.service.RepositoryService.RepositoryInfo,
+        collaborators: List[String])(implicit context: gitbucket.core.controller.Context)
+@import context._
+@import gitbucket.core.view.helpers._
+@gitbucket.core.html.main("Security", Some(repository)) {
+  @gitbucket.core.html.menu("secextension", repository) {
+    <div id="root">Hallo Welt2</div>
+
+  }
+}

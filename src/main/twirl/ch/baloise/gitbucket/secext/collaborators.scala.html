@@ -5,7 +5,7 @@
 @import gitbucket.core.view.helpers._
 @gitbucket.core.html.main("Security", Some(repository)) {
   @gitbucket.core.html.menu("secextension", repository) {
-    <div id="root">Hallo Welt2</div>
+
     <h3>Manage Collaborators</h3>
     <ul class="collaborator">
     @collaborators.map { collaboratorName =>
@@ -20,7 +20,7 @@
         }
       </li>
     }
-        <li>test</li>
+
     </ul>
     @if(!isGroupRepository){
       <form method="POST" action="@url(repository)/secextension/collaborators/add" validate="true" autocomplete="off">

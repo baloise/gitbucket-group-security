@@ -1,0 +1,16 @@
+@(repos: List[Tuple2[String, String]] )(implicit context: gitbucket.core.controller.Context)
+@import context._
+@import gitbucket.core.view.helpers._
+@gitbucket.core.html.main("Snippets"){
+    <h3>Manage Collaborators</h3>
+    <hr style="margin-bottom: 20px;"/>
+    <div class="container body">
+    @repos.map { tup =>
+        <li>
+          @tup._1/@tup._2
+        </li>
+    }
+
+    </div>
+
+}

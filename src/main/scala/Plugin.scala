@@ -30,4 +30,8 @@ class Plugin extends gitbucket.core.plugin.Plugin {
     (repositoryInfo: RepositoryInfo, context: Context) => Some(Link("secextension", "Security", "/secextension", Some("circuit-board")))
   )
 
+  override val globalMenus = Seq(
+    (context: Context) => Some(Link("repolist", "Repository List", "repolist"))
+  )
+
 }

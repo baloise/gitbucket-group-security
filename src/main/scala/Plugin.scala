@@ -1,8 +1,6 @@
 import javax.servlet.ServletContext
 
-import ch.baloise.gitbucket.apiextension.ApiExtensionController
 import ch.baloise.gitbucket.secext.SecurityExtensionController
-import ch.baloise.gitbucket.secext.replist.RepolistController
 import gitbucket.core.controller.Context
 import gitbucket.core.plugin.{Link, PluginRegistry}
 import gitbucket.core.service.RepositoryService.RepositoryInfo
@@ -23,18 +21,11 @@ class Plugin extends gitbucket.core.plugin.Plugin {
   }
 
   override val controllers = Seq(
-    "/*" -> new SecurityExtensionController,
-    "/*" -> new RepolistController,
-    "/*" -> new ApiExtensionController
+    "/*" -> new SecurityExtensionController
   )
 
   override val repositoryMenus = Seq(
     (repositoryInfo: RepositoryInfo, context: Context) => Some(Link("secextension", "Collaboration", "/secextension", Some("circuit-board")))
   )
-
-  override val dashboardTabs = Seq(
-    (context: Context) => Some(Link("repolist", "Repository List", "repolist"))
-  )
-
 
 }

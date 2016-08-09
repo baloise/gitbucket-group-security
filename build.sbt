@@ -13,9 +13,7 @@ resolvers ++= Seq(
   "amateras-repo" at "http://amateras.sourceforge.jp/mvn/",
   "amateras-snapshot-repo" at "http://amateras.sourceforge.jp/mvn-snapshot/"
 )
-
 resolvers += Resolver.jcenterRepo
-
 libraryDependencies ++= Seq(
   "gitbucket"          % "gitbucket-assembly" % "4.2.0" % "provided",
   "com.typesafe.play" %% "twirl-compiler"     % "1.0.4" % "provided",

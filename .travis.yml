@@ -7,3 +7,4 @@ branches:
     - master
 jdk:
   - oraclejdk8
+script: sbt clean compile package publish

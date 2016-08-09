@@ -14,6 +14,8 @@ resolvers ++= Seq(
   "amateras-snapshot-repo" at "http://amateras.sourceforge.jp/mvn-snapshot/"
 )
 
+resolvers += Resolver.jcenterRepo
+
 libraryDependencies ++= Seq(
   "gitbucket"          % "gitbucket-assembly" % "4.2.0" % "provided",
   "com.typesafe.play" %% "twirl-compiler"     % "1.0.4" % "provided",
@@ -22,3 +24,7 @@ libraryDependencies ++= Seq(
 
 scalacOptions := Seq("-deprecation", "-feature", "-language:postfixOps")
 javacOptions in compile ++= Seq("-target", "7", "-source", "7")
+
+publishTo := Some("Bintray API Realm" at "https://api.bintray.com/content/schlijo/gitbucket-group-security/gitbucket-group-sec-plugin/0.5")
+
+credentials += Credentials(new File("credentials.properties"))

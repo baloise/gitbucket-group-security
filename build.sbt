@@ -25,6 +25,6 @@ libraryDependencies ++= Seq(
 scalacOptions := Seq("-deprecation", "-feature", "-language:postfixOps")
 javacOptions in compile ++= Seq("-target", "7", "-source", "7")
 
-publishTo := Some("Bintray API Realm" at "https://api.bintray.com/content/schlijo/gitbucket-plugins/gitbucket-group-security/0.5")
+publishTo := Some("Bintray API Realm" at "https://api.bintray.com/content/schlijo/gitbucket-plugins/gitbucket-group-security/1.0")
 
 credentials += Credentials(new File("credentials.properties"))
